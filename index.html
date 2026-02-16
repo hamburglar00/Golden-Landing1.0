@@ -10,7 +10,7 @@
     <style>
       *{margin:0;padding:0;box-sizing:border-box;} html,body{height:100%;}
       body{font-family:Arial,Helvetica,sans-serif;color:#fff;background:#000;-webkit-font-smoothing:antialiased;}
-      .background-image{background-color:#000;background-image:url("imagenes/fondo.avif");background-size:cover;background-position:center;background-repeat:no-repeat;width:100%;min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;position:relative;}
+      .background-image{background-color:#000;background-size:cover;background-position:center;background-repeat:no-repeat;width:100%;min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;position:relative;}
       .overlay{position:absolute;inset:0;background:rgba(0,0,0,.7);}
       .content{position:relative;text-align:center;display:flex;flex-direction:column;align-items:center;padding:18px 14px;width:min(92vw,520px);}
       .logo{width:250px;height:250px;object-fit:contain;display:block;}
@@ -31,7 +31,19 @@
     <!-- Performance -->
     <link rel="preconnect" href="https://connect.facebook.net" crossorigin />
     <link rel="dns-prefetch" href="//connect.facebook.net" />
-    <link rel="preload" as="image" href="imagenes/fondo.avif" type="image/avif" fetchpriority="high" />
+    <script>
+      (function(){
+        var FONDOS = ["imagenes/fondo1.avif","imagenes/fondo2.avif","imagenes/fondo3.avif","imagenes/fondo4.avif","imagenes/fondo5.avif","imagenes/fondo6.avif","imagenes/fondo7.avif"];
+        var DIAS_POR_FONDO = 2;
+        var daysSinceEpoch = Math.floor(Date.now() / 86400000);
+        var idx = Math.floor(daysSinceEpoch / DIAS_POR_FONDO) % FONDOS.length;
+        window.__fondoActual = FONDOS[idx];
+        var link = document.createElement("link");
+        link.rel = "preload"; link.as = "image"; link.href = window.__fondoActual;
+        link.type = "image/avif"; link.fetchPriority = "high";
+        document.head.appendChild(link);
+      })();
+    </script>
 
     <!-- Meta Pixel: stub en head (no bloquea), init/track después del primer pintado -->
     <script>
@@ -211,6 +223,12 @@ function contactarWhatsApp({ source="main_button" } = {}){
  * UI wiring
  ************************************************************/
 document.addEventListener("DOMContentLoaded",()=>{
+  // Aplicar fondo rotativo
+  if(window.__fondoActual){
+    const bg = document.querySelector(".background-image");
+    if(bg) bg.style.backgroundImage = 'url("' + window.__fondoActual + '")';
+  }
+
   __pickedResult = getNumberFromFixed();
 
   const btn = document.getElementById("whatsappButton");

@@ -17,7 +17,7 @@ body {
    ========================== */
 .background-image {
   background-color: #000;
-  background-image: url("imagenes/fondo.avif");
+  /* background-image se aplica dinámicamente por JS (rotación cada 2 días) */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
