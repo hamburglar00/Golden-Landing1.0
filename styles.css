@@ -64,19 +64,22 @@ body {
   font-weight: 800;
   line-height: 1.15;
   text-wrap: balance;
+  text-shadow: 0 2px 8px rgba(0,0,0,.8);
 }
 
 .subtitle {
   font-size: 19px;
-  margin-top: 40px;
+  margin-top: 20px;
   line-height: 1.25;
+  text-shadow: 0 2px 8px rgba(0,0,0,.8);
 }
 
 .description {
   color: gold;
   font-size: 14px;
   font-weight: 800;
-  margin: 35px 0 50px;
+  text-shadow: 0 2px 8px rgba(0,0,0,.8);
+  margin: 20px 0 30px;
   letter-spacing: .2px;
 }
 

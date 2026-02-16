@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>GOLDEN</title>
+    <title>DONSOCIAL</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
     <!-- Critical CSS: primer pintado sin esperar styles.css -->
@@ -14,9 +14,9 @@
       .overlay{display:none;}
       .content{position:relative;text-align:center;display:flex;flex-direction:column;align-items:center;padding:18px 14px;width:min(92vw,520px);}
       .logo{width:250px;height:250px;object-fit:contain;display:block;}
-      .title{margin:10px 0 15px;font-size:22px;font-weight:800;line-height:1.15;text-wrap:balance;}
-      .subtitle{font-size:19px;margin-top:40px;line-height:1.25;}
-      .description{color:gold;font-size:14px;font-weight:800;margin:35px 0 50px;}
+      .title{margin:10px 0 15px;font-size:22px;font-weight:800;line-height:1.15;text-wrap:balance;text-shadow:0 2px 8px rgba(0,0,0,.8);}
+      .subtitle{font-size:19px;margin-top:20px;line-height:1.25;text-shadow:0 2px 8px rgba(0,0,0,.8);}
+      .description{color:gold;font-size:14px;font-weight:800;margin:20px 0 30px;text-shadow:0 2px 8px rgba(0,0,0,.8);}
       .whatsapp-button{position:relative;overflow:hidden;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(145deg,#155c3d,#0e2d1e);color:#fff;font-size:28px;font-weight:900;padding:20px;border:3px solid #fff;border-radius:10px;text-decoration:none;margin-top:25px;min-width:250px;box-shadow:0 0 30px 8px rgba(255,215,0,.70),0 10px 22px rgba(0,0,0,.45);animation:heartbeat 2s infinite ease-in-out;transition:transform .16s ease;will-change:transform;-webkit-tap-highlight-color:transparent;user-select:none;}
       .whatsapp-button:active{transform:scale(.97);}
       .whatsapp-button::before{content:"";position:absolute;inset:0;width:50%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.55),transparent);transform:translateX(-150%) skewX(-25deg);animation:shineX 3.8s infinite;pointer-events:none;}
@@ -62,13 +62,13 @@
           window.userLn=(params.get("ln")||"").trim()||undefined;
           window.externalId=getOrCreateExternalId();
           var t=document.createElement("script");t.async=true;t.src="https://connect.facebook.net/en_US/fbevents.js";(document.head||document.documentElement).appendChild(t);
-          fbq("init","TU_PIXEL_ID",{external_id:window.externalId,em:window.userEmail||void 0,ph:window.userPhone||void 0,fn:window.userFn,ln:window.userLn,country:"AR"});
+          fbq("init","1459000075661483",{external_id:window.externalId,em:window.userEmail||void 0,ph:window.userPhone||void 0,fn:window.userFn,ln:window.userLn,country:"AR"});
           fbq("track","PageView");
         },0);
       })();
     </script>
     <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=TU_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+      src="https://www.facebook.com/tr?id=1459000075661483&ev=PageView&noscript=1"/></noscript>
   </head>
 
   <body>
@@ -76,7 +76,7 @@
       <div class="overlay"></div>
       <div class="content">
         <img src="imagenes/logo.png" class="logo" width="240" height="120"
-             alt="GOLDEN" decoding="async" fetchpriority="high" />
+             alt="DON SOCIAL" decoding="async" fetchpriority="high" />
 
         <p class="title">Envianos un WhatsApp<br />para crear tu cuenta</p>
 
@@ -87,7 +87,7 @@
         </a>
 
         <p class="subtitle">Sin Límite de retiro<br />Sin Cronogramas<br />Ganás y cobrás a cualquier hora</p>
-        <p class="description"></p>
+        <p class="description">-RED OFICIAL: DON SOCIAL 32-</p>
       </div>
     </div>
 
@@ -96,16 +96,16 @@
  * CONFIG
  ************************************************************/
 const LANDING_CONFIG = {
-  BRAND_NAME: "GOLDEN",
+  BRAND_NAME: "DON SOCIAL",
   MODE: "ads",
-  PROMO: { ENABLED: true, LANDING_TAG: "GLD10" }
+  PROMO: { ENABLED: true, LANDING_TAG: "CH1.0" }
 };
 
 /************************************************************
  * NÚMEROS FIJOS (aleatorio) — funciona con 1 o varios
  ************************************************************/
 const FIXED_PHONES = [
-  "549" //Completar Numero
+  "5493516768842"
 ];
 
 /************************************************************
